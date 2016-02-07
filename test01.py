@@ -3,7 +3,7 @@
 # and open the template in the editor.
 
 import unittest
-from iniciapantalla import *
+import dadgraphics
 
 class  Test01TestCase(unittest.TestCase):
     #def setUp(self):
@@ -17,8 +17,14 @@ class  Test01TestCase(unittest.TestCase):
     def test_iniciapantalla(self):
         #assert x != y;
         #self.assertEqual(x, y, "Msg");
-        self.assertEqual(repr(iniciapantalla()),'iniciapantalla()','iniciapantalla existe')
+        #self.assertEqual(dadgraphics.SCREEN,False,'Todavia no existe la pantalla creada')
+        #self.assertEqual(repr(dadgraphics.iniciapantalla()),'iniciapantalla()','iniciapantalla existe')
         #self.fail("TODO: Write test")
+        self.assertEqual(dadgraphics.imprimescreen(),False,'')
+        dadgraphics.iniciapantalla()
+        self.assertEqual(dadgraphics.imprimescreen(),True,'')
+        
+        
 
 if __name__ == '__main__':
     unittest.main()

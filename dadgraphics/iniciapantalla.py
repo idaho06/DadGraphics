@@ -3,17 +3,25 @@
 # and open the template in the editor.
 import sdl2
 import sdl2.ext
+from .state import *
 
-class iniciapantalla:
-    def __init__(self, ancho=640, alto=480, pantallacompleta=True):
-        #print ('ancho:%d, alto:%d', ancho, alto)
-        self._iniciapantalla(ancho, alto, pantallacompleta)
-    
-    def __repr__(self):
-        return 'iniciapantalla()'
+#class iniciapantalla:
+#    def __init__(self, ancho=640, alto=480, pantallacompleta=True):
+#        #print ('ancho:%d, alto:%d', ancho, alto)
+#        self._iniciapantalla(ancho, alto, pantallacompleta)
+#    
+#    def __repr__(self):
+#        return 'iniciapantalla()'
+#
+#    def _iniciapantalla(self, ancho, alto, pantallacompleta):
+#        global SCREEN
+#        print(SCREEN)
+#        SCREEN = self
+#        print(SCREEN)
 
-    def _iniciapantalla(self, ancho, alto, pantallacompleta):
-        pass
+
+def iniciapantalla(ancho=640, alto=480, pantallacompleta=True):
+    state.SCREEN = True
 
 if __name__ == "__main__":
     print ("This module is not meant to be executed")
