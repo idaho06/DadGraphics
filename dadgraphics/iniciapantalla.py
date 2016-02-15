@@ -1,27 +1,37 @@
-# To change this license header, choose License Headers in Project Properties.
-# To change this template file, choose Tools | Templates
-# and open the template in the editor.
+# TODO: proper header
+
 import sdl2
 import sdl2.ext
 from .state import *
 
-#class iniciapantalla:
-#    def __init__(self, ancho=640, alto=480, pantallacompleta=True):
-#        #print ('ancho:%d, alto:%d', ancho, alto)
-#        self._iniciapantalla(ancho, alto, pantallacompleta)
-#    
-#    def __repr__(self):
-#        return 'iniciapantalla()'
-#
-#    def _iniciapantalla(self, ancho, alto, pantallacompleta):
-#        global SCREEN
-#        print(SCREEN)
-#        SCREEN = self
-#        print(SCREEN)
 
+def iniciapantalla(ancho=640, alto=480, pantallacompleta=False, titulo="Dadgraphics version 0.1"):
+    if state.SCREEN == False:
+        if pantallacompleta:
+            sdlflags=sdl2.SDL_WINDOW_FULLSCREEN_DESKTOP
+        else:
+            sdlflags=None
+            
+        state.RESOURCES = sdl2.ext.Resources(__file__, "./res")
+        sdl2.ext.init()
+        #window = sdl2.ext.Window("Up, up and above remake", size=(800, 600), flags=sdl2.SDL_WINDOW_FULLSCREEN_DESKTOP)
+        state.WINDOW = sdl2.ext.Window(titulo, size=(ancho, alto), flags=sdlflags)
+        state.WINDOW.show()
+        #logging.info('SDL window started')
 
-def iniciapantalla(ancho=640, alto=480, pantallacompleta=True):
-    state.SCREEN = True
+        #logging.info('Setting world')
+        state.WORLD = sdl2.ext.World()
 
+        #logging.info('Creating renderer')
+        state.RENDERER = sdl2.ext.Renderer(state.WINDOW,flags=sdl2.render.SDL_RENDERER_ACCELERATED|sdl2.render.SDL_RENDERER_PRESENTVSYNC)
+        #logging.info('Creating sprite factory')
+        state.SPRITEFACTORY = sdl2.ext.SpriteFactory(sdl2.ext.TEXTURE, renderer=state.RENDERER)
+    
+        state.SCREEN = True
+        return True
+    else:
+        printf("La pantalla ya esta creada")
+        return false
+    
 if __name__ == "__main__":
     print ("This module is not meant to be executed")

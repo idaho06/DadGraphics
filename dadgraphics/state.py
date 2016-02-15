@@ -5,6 +5,11 @@ import sdl2.ext
 
 class state():
     SCREEN = False
+    WINDOW = None
+    RENDERER = None
+    RESOURCES = None
+    WORLD = None
+    SPRITEFACTORY = None
 
 
 if __name__ == "__main__":

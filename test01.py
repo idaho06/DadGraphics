@@ -23,7 +23,14 @@ class  Test01TestCase(unittest.TestCase):
         self.assertEqual(dadgraphics.imprimescreen(),False,'')
         dadgraphics.iniciapantalla()
         self.assertEqual(dadgraphics.imprimescreen(),True,'')
-        
+        dadgraphics.quitapantalla()
+        self.assertEqual(dadgraphics.imprimescreen(),False,'')
+        dadgraphics.iniciapantalla()
+        self.assertEqual(dadgraphics.imprimescreen(),True,'')
+        dadgraphics.quitapantalla()
+        self.assertEqual(dadgraphics.imprimescreen(),False,'')
+    
+    
         
 
 if __name__ == '__main__':
