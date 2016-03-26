@@ -5,6 +5,19 @@ import sdl2.ext
 from .state import *
 
 
+class TextureRenderSystem(sdl2.ext.TextureSpriteRenderSystem):
+    def __init__(self, renderer):
+        super(TextureRenderSystem, self).__init__(renderer)
+        self.renderer = renderer
+
+    def render(self, components):
+        #tmp = self.renderer.color
+        #self.renderer.color = BLACK
+        #self.renderer.clear()
+        #self.renderer.color = tmp
+        super(TextureRenderSystem, self).render(components)
+
+
 def iniciapantalla(ancho=640, alto=480, pantallacompleta=False, titulo="Dadgraphics version 0.1"):
     if state.SCREEN == False:
         if pantallacompleta:
@@ -26,6 +39,11 @@ def iniciapantalla(ancho=640, alto=480, pantallacompleta=False, titulo="Dadgraph
         state.RENDERER = sdl2.ext.Renderer(state.WINDOW,flags=sdl2.render.SDL_RENDERER_ACCELERATED|sdl2.render.SDL_RENDERER_PRESENTVSYNC)
         #logging.info('Creating sprite factory')
         state.SPRITEFACTORY = sdl2.ext.SpriteFactory(sdl2.ext.TEXTURE, renderer=state.RENDERER)
+    
+        #logging.info('Creating SpriteRenderer')
+        state.SPRITERENDERER = TextureRenderSystem(state.RENDERER)
+        
+        state.WORLD.add_system(state.SPRITERENDERER)
     
         state.SCREEN = True
         return True

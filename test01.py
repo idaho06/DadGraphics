@@ -30,7 +30,25 @@ class  Test01TestCase(unittest.TestCase):
         dadgraphics.quitapantalla()
         self.assertEqual(dadgraphics.imprimescreen(),False,'')
     
+    def test_esperatecla(self):
+        self.assertEqual(dadgraphics.esperacualquiertecla(),False,'')
+        dadgraphics.iniciapantalla()
+        print("Pulsa cualquier tecla")
+        self.assertEqual(dadgraphics.esperacualquiertecla(),True,'')
+        dadgraphics.quitapantalla()
     
+    def test_borrapantalla(self):
+        self.assertEqual(dadgraphics.borrapantalla(),False,'')
+        dadgraphics.iniciapantalla()
+        self.assertEqual(dadgraphics.borrapantalla(),True,'')
+        dadgraphics.esperacualquiertecla()
+        self.assertEqual(dadgraphics.borrapantalla(color=dadgraphics.ROJO),True,'')
+        dadgraphics.esperacualquiertecla()
+        self.assertEqual(dadgraphics.borrapantalla(color=dadgraphics.VERDE),True,'')
+        dadgraphics.esperacualquiertecla()
+        self.assertEqual(dadgraphics.borrapantalla(color=dadgraphics.AZUL),True,'')
+        dadgraphics.esperacualquiertecla()
+        dadgraphics.quitapantalla()
         
 
 if __name__ == '__main__':

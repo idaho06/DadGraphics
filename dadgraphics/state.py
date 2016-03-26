@@ -10,6 +10,7 @@ class state():
     RESOURCES = None
     WORLD = None
     SPRITEFACTORY = None
+    SPRITERENDERER = None
 
 
 if __name__ == "__main__":

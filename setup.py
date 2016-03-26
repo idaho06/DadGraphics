@@ -16,7 +16,7 @@ setup (
        #summary = 'Just another Python package for the cheese shop',
        url='',
        license='',
-       long_description='Easy graphics library so my dad es able to program in python',
+       long_description='Easy graphics library so my dad is able to program in python',
 
        # could also include long_description, download_url, classifiers, etc.
 
