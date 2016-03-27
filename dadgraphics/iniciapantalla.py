@@ -49,7 +49,7 @@ def iniciapantalla(ancho=640, alto=480, pantallacompleta=False, titulo="Dadgraph
         return True
     else:
         print("La pantalla ya esta creada")
-        return false
+        return False
     
 if __name__ == "__main__":
     print ("This module is not meant to be executed")
