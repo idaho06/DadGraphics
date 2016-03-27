@@ -1,9 +1,9 @@
 # TODO: proper header
 
-from colores import *
+from .colores import *
 import sdl2
 import sdl2.ext
-from state import *
+from .state import *
 
 def borrapantalla(color=BLANCO):
     if state.SCREEN == False:

@@ -48,7 +48,7 @@ def iniciapantalla(ancho=640, alto=480, pantallacompleta=False, titulo="Dadgraph
         state.SCREEN = True
         return True
     else:
-        printf("La pantalla ya esta creada")
+        print("La pantalla ya esta creada")
         return false
     
 if __name__ == "__main__":
