@@ -11,6 +11,7 @@ class state():
     WORLD = None
     SPRITEFACTORY = None
     SPRITERENDERER = None
+    SIZE = None
 
 
 if __name__ == "__main__":

@@ -29,6 +29,19 @@ class  Test01TestCase(unittest.TestCase):
         self.assertEqual(dadgraphics.imprimescreen(),True,'')
         dadgraphics.quitapantalla()
         self.assertEqual(dadgraphics.imprimescreen(),False,'')
+        dadgraphics.iniciapantalla(ancho=320,alto=200,pantallacompleta=False,titulo="Pantalla de 320x200")
+        self.assertEqual(dadgraphics.state.SIZE,(320,200),'')
+        dadgraphics.esperacualquiertecla()
+        dadgraphics.quitapantalla()
+        self.assertEqual(dadgraphics.state.SCREEN, False, '')
+        self.assertEqual(dadgraphics.state.RENDERER, None, '')
+        self.assertEqual(dadgraphics.state.WINDOW, None, '')
+        self.assertEqual(dadgraphics.state.SPRITEFACTORY, None, '')
+        self.assertEqual(dadgraphics.state.SPRITERENDERER, None, '')
+        self.assertEqual(dadgraphics.state.WORLD, None, '')
+        self.assertEqual(dadgraphics.state.RESOURCES, None, '')
+        self.assertEqual(dadgraphics.state.SIZE, None, '')
+
     
     def test_esperatecla(self):
         self.assertEqual(dadgraphics.esperacualquiertecla(),False,'')

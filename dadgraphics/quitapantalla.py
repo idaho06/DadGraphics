@@ -12,7 +12,9 @@ def quitapantalla():
     state.RESOURCES = None
     state.WORLD = None
     state.SPRITEFACTORY = None
+    state.SPRITERENDERER = None
     state.SCREEN = False
+    state.SIZE = None
 
 if __name__ == "__main__":
     print ("This module is not meant to be executed")

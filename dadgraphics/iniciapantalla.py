@@ -30,6 +30,7 @@ def iniciapantalla(ancho=640, alto=480, pantallacompleta=False, titulo="Dadgraph
         #window = sdl2.ext.Window("Up, up and above remake", size=(800, 600), flags=sdl2.SDL_WINDOW_FULLSCREEN_DESKTOP)
         state.WINDOW = sdl2.ext.Window(titulo, size=(ancho, alto), flags=sdlflags)
         state.WINDOW.show()
+        state.SIZE = (ancho, alto)
         #logging.info('SDL window started')
 
         #logging.info('Setting world')
