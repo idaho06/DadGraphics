@@ -38,6 +38,7 @@ def iniciapantalla(ancho=640, alto=480, pantallacompleta=False, titulo="Dadgraph
 
         #logging.info('Creating renderer')
         state.RENDERER = sdl2.ext.Renderer(state.WINDOW,flags=sdl2.render.SDL_RENDERER_ACCELERATED|sdl2.render.SDL_RENDERER_PRESENTVSYNC)
+        #state.RENDERER = sdl2.ext.Renderer(state.WINDOW)
         #logging.info('Creating sprite factory')
         state.SPRITEFACTORY = sdl2.ext.SpriteFactory(sdl2.ext.TEXTURE, renderer=state.RENDERER)
     

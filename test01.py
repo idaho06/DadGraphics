@@ -62,6 +62,15 @@ class  Test01TestCase(unittest.TestCase):
         self.assertEqual(dadgraphics.borrapantalla(color=dadgraphics.AZUL),True,'')
         dadgraphics.esperacualquiertecla()
         dadgraphics.quitapantalla()
+
+    def test_pixel(self):
+        dadgraphics.iniciapantalla(titulo="Pixel en el centro")
+        dadgraphics.borrapantalla(color=dadgraphics.NEGRO)
+        dadgraphics.esperacualquiertecla()
+        self.assertEqual(dadgraphics.pixel(320,240,dadgraphics.BLANCO), True, '')
+        print("Pulsa cualquier tecla")
+        dadgraphics.esperacualquiertecla()
+        dadgraphics.quitapantalla()
         
 
 if __name__ == '__main__':

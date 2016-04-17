@@ -10,7 +10,7 @@ def borrapantalla(color=BLANCO):
         return False
     lastcolor = state.RENDERER.color
     state.RENDERER.color = color
-    state.RENDERER.clear()
+    state.RENDERER.clear(color=color)
     state.RENDERER.color = lastcolor
     state.WORLD.process()
     return True
