@@ -14,7 +14,7 @@ def pixel(x=0,y=0,color=None):
         return False
 
     state.RENDERER.draw_point((x,y),color)
-    state.WORLD.process()
+    state.RENDERER.present()
     return True
 
 
