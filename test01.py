@@ -70,6 +70,12 @@ class  Test01TestCase(unittest.TestCase):
         self.assertEqual(dadgraphics.pixel(320,240,dadgraphics.BLANCO), True, '')
         print("Pulsa cualquier tecla")
         dadgraphics.esperacualquiertecla()
+        self.assertEqual(dadgraphics.pixel(322,240,dadgraphics.BLANCO), True, '')
+        print("Pulsa cualquier tecla")
+        dadgraphics.esperacualquiertecla()
+        self.assertEqual(dadgraphics.pixel(324,240,dadgraphics.BLANCO), True, '')
+        print("Pulsa cualquier tecla")
+        dadgraphics.esperacualquiertecla()
         dadgraphics.quitapantalla()
         
 
