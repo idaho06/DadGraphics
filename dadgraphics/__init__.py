@@ -6,3 +6,4 @@ from .esperacualquiertecla import *
 from .colores import *
 from .borrapantalla import *
 from .pixel import *
+from .linea import *

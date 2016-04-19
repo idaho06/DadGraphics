@@ -78,6 +78,21 @@ class  Test01TestCase(unittest.TestCase):
         dadgraphics.esperacualquiertecla()
         dadgraphics.quitapantalla()
         
+    def test_linea(self):
+        dadgraphics.iniciapantalla(titulo="Lineas")
+        dadgraphics.borrapantalla(color=dadgraphics.NEGRO)
+        dadgraphics.esperacualquiertecla()
+        self.assertEqual(dadgraphics.linea(0, 0, 640, 480, dadgraphics.BLANCO), True, '')
+        print("Pulsa cualquier tecla")
+        dadgraphics.esperacualquiertecla()
+        self.assertEqual(dadgraphics.linea(640, 0, 0, 480, dadgraphics.ROJO), True, '')
+        print("Pulsa cualquier tecla")
+        dadgraphics.esperacualquiertecla()
+        self.assertEqual(dadgraphics.linea(0, 240, 640, 240, dadgraphics.AMARILLO), True, '')
+        self.assertEqual(dadgraphics.linea(320, 0, 320, 640, dadgraphics.VERDE), True, '')
+        print("Pulsa cualquier tecla")
+        dadgraphics.esperacualquiertecla()
+        dadgraphics.quitapantalla()
 
 if __name__ == '__main__':
     unittest.main()
