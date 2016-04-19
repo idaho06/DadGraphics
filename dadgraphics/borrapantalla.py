@@ -12,7 +12,7 @@ def borrapantalla(color=BLANCO):
     state.RENDERER.color = color
     state.RENDERER.clear(color=color)
     state.RENDERER.color = lastcolor
-    state.WORLD.process()
+    state.RENDERER.present()
     return True
 
 if __name__ == "__main__":
